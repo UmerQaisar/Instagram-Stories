@@ -1,0 +1,8 @@
+<h1>This is rooot</h1>
+
+<% unless current_user %>
+  <%= button_to 'Sign In Using Facebook', user_facebook_omniauth_authorize_path, data: { turbo: false } %>
+<% else %>
+  <%= link_to 'Home', home_path, data: {} %><br>
+  <%= link_to 'Logout', destroy_user_session_path, data: { 'turbo-method' => :delete } %>
+<% end %>
